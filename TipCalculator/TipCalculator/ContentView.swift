@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var total: String = ""
-    @State private var tipPercentage: Double = 0.1
+    @State private var tipPercentage: Double = 0.2
     @State private var tip: String?
     @State private var message: String = ""
     
@@ -21,6 +21,7 @@ struct ContentView: View {
             VStack {
                 TextField("Enter Total", text: $total)
                     .textFieldStyle(.roundedBorder)
+                    .accessibilityIdentifier("totalTextField")
                 
                 Picker(selection: $tipPercentage) {
                     Text("10%").tag(0.1)
@@ -28,7 +29,9 @@ struct ContentView: View {
                     Text("30%").tag(0.3)
                 } label: {
                     EmptyView()
-                }.pickerStyle(.segmented)
+                }
+                .pickerStyle(.segmented)
+                .accessibilityIdentifier("tipPercentSegmentControl")
                 
                 Button("Calculate Tip") {
                     
@@ -52,7 +55,9 @@ struct ContentView: View {
                         message = "Invalid Input Error"
                     }
                     
-                }.padding(.top, 20)
+                }
+                .padding(.top, 20)
+                .accessibilityIdentifier("calculateTipButton")
                 
                 Text(message)
                     .padding(.top, 50)

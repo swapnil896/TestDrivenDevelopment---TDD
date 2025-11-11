@@ -10,9 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var total: String = ""
-    @State private var tipPercentage: String = ""
+    @State private var tipPercentage: Double = 0.1
     @State private var tip: String?
     @State private var message: String = ""
+    
+    let tipCalculator = TipCalculator()
     
     var body: some View {
         NavigationView {
@@ -29,6 +31,26 @@ struct ContentView: View {
                 }.pickerStyle(.segmented)
                 
                 Button("Calculate Tip") {
+                    
+                    message = ""
+                    tip = ""
+                    
+                    guard let totalAmt = Double(total) else {
+                        message = "Invalid Input error"
+                        return
+                    }
+                    
+                    do {
+                        let result = try tipCalculator.calculate(total: totalAmt, tipPercentage: tipPercentage)
+                        let formatter = NumberFormatter()
+                        formatter.numberStyle = .currency
+                        tip = formatter.string(from: NSNumber(value: result))!
+                        
+                    } catch TipCalculatorError.invalidInput {
+                        message = "Invalid Input"
+                    } catch {
+                        message = "Invalid Input Error"
+                    }
                     
                 }.padding(.top, 20)
                 

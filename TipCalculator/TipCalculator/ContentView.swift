@@ -21,7 +21,7 @@ struct ContentView: View {
             VStack {
                 TextField("Enter Total", text: $total)
                     .textFieldStyle(.roundedBorder)
-                    .accessibilityIdentifier("totalTextField")
+                    .accessibilityIdentifier(AccessibilityID.totalTextField)
                 
                 Picker(selection: $tipPercentage) {
                     Text("10%").tag(0.1)
@@ -31,9 +31,9 @@ struct ContentView: View {
                     EmptyView()
                 }
                 .pickerStyle(.segmented)
-                .accessibilityIdentifier("tipPercentSegmentControl")
+                .accessibilityIdentifier(AccessibilityID.tipPercentSegmentControl)
                 
-                Button("Calculate Tip") {
+                Button {
                     
                     message = ""
                     tip = ""
@@ -55,17 +55,21 @@ struct ContentView: View {
                         message = "Invalid Input Error"
                     }
                     
+                } label: {
+                    Text("Calculate Tip")
+                        .accessibilityIdentifier(AccessibilityID.calculateTipButton)
                 }
                 .padding(.top, 20)
-                .accessibilityIdentifier("calculateTipButton")
                 
                 Text(message)
                     .padding(.top, 50)
+                    .accessibilityIdentifier(AccessibilityID.messageText)
                 
                 Spacer()
                 
                 Text(tip ?? "")
                     .font(.system(size: 54))
+                    .accessibilityIdentifier(AccessibilityID.tipText)
                 
                 Spacer()
                     .navigationTitle("Tip Calculator")

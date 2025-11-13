@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var loginVM = LoginViewModel(service: Webservice())
+    @StateObject private var loginVM = LoginViewModel(service: NetworkServiceFactory.create())
     @State private var message: String = ""
     
     var errorMessage: String {
@@ -50,14 +50,14 @@ struct ContentView: View {
                     Text(errorMessage)
                         .accessibilityIdentifier("messageText")
                 }
+                
+                NavigationLink(isActive: .constant(loginVM.loginStatus == .authenticated)) {
+                    DashboardView()
+                } label: {
+                    EmptyView()
+                }
             }
-            
-            NavigationLink(isActive: .constant(loginVM.loginStatus == .authenticated)) {
-                DashboardView()
-            } label: {
-                EmptyView()
-            }
-
+            .navigationTitle("Login")
         }
     }
 }

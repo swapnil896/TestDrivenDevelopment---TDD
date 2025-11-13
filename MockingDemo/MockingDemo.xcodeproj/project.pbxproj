@@ -6,20 +6,67 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		43E713262EC5B32B00DEF4D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43E712E72EC5917500DEF4D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43E712EE2EC5917500DEF4D4;
+			remoteInfo = MockingDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		43E712EF2EC5917500DEF4D4 /* MockingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E713202EC5B32B00DEF4D4 /* MockingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		43E713372EC5D59500DEF4D4 /* Exceptions for "MockingDemo" folder in "MockingDemoUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/LoginResponse.swift,
+				Services/WebService.swift,
+			);
+			target = 43E7131F2EC5B32B00DEF4D4 /* MockingDemoUITests */;
+		};
+		43E7133D2EC5D78800DEF4D4 /* Exceptions for "MockingDemoUITests" folder in "MockingDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mocks/MockWebservice.swift,
+			);
+			target = 43E712EE2EC5917500DEF4D4 /* MockingDemo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		43E712F12EC5917500DEF4D4 /* MockingDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				43E713372EC5D59500DEF4D4 /* Exceptions for "MockingDemo" folder in "MockingDemoUITests" target */,
+			);
 			path = MockingDemo;
+			sourceTree = "<group>";
+		};
+		43E713212EC5B32B00DEF4D4 /* MockingDemoUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				43E7133D2EC5D78800DEF4D4 /* Exceptions for "MockingDemoUITests" folder in "MockingDemo" target */,
+			);
+			path = MockingDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		43E712EC2EC5917500DEF4D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43E7131D2EC5B32B00DEF4D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				43E712F12EC5917500DEF4D4 /* MockingDemo */,
+				43E713212EC5B32B00DEF4D4 /* MockingDemoUITests */,
 				43E712F02EC5917500DEF4D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				43E712EF2EC5917500DEF4D4 /* MockingDemo.app */,
+				43E713202EC5B32B00DEF4D4 /* MockingDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +119,29 @@
 			productReference = 43E712EF2EC5917500DEF4D4 /* MockingDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		43E7131F2EC5B32B00DEF4D4 /* MockingDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43E713282EC5B32B00DEF4D4 /* Build configuration list for PBXNativeTarget "MockingDemoUITests" */;
+			buildPhases = (
+				43E7131C2EC5B32B00DEF4D4 /* Sources */,
+				43E7131D2EC5B32B00DEF4D4 /* Frameworks */,
+				43E7131E2EC5B32B00DEF4D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43E713272EC5B32B00DEF4D4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				43E713212EC5B32B00DEF4D4 /* MockingDemoUITests */,
+			);
+			name = MockingDemoUITests;
+			packageProductDependencies = (
+			);
+			productName = MockingDemoUITests;
+			productReference = 43E713202EC5B32B00DEF4D4 /* MockingDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +154,10 @@
 				TargetAttributes = {
 					43E712EE2EC5917500DEF4D4 = {
 						CreatedOnToolsVersion = 26.0.1;
+					};
+					43E7131F2EC5B32B00DEF4D4 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 43E712EE2EC5917500DEF4D4;
 					};
 				};
 			};
@@ -100,12 +176,20 @@
 			projectRoot = "";
 			targets = (
 				43E712EE2EC5917500DEF4D4 /* MockingDemo */,
+				43E7131F2EC5B32B00DEF4D4 /* MockingDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		43E712ED2EC5917500DEF4D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43E7131E2EC5B32B00DEF4D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +206,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43E7131C2EC5B32B00DEF4D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43E713272EC5B32B00DEF4D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43E712EE2EC5917500DEF4D4 /* MockingDemo */;
+			targetProxy = 43E713262EC5B32B00DEF4D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		43E712F82EC5917600DEF4D4 /* Debug */ = {
@@ -306,6 +405,44 @@
 			};
 			name = Release;
 		};
+		43E713292EC5B32B00DEF4D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = company.swapnil.MockingDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MockingDemo;
+			};
+			name = Debug;
+		};
+		43E7132A2EC5B32B00DEF4D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = company.swapnil.MockingDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MockingDemo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +460,15 @@
 			buildConfigurations = (
 				43E712FB2EC5917600DEF4D4 /* Debug */,
 				43E712FC2EC5917600DEF4D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43E713282EC5B32B00DEF4D4 /* Build configuration list for PBXNativeTarget "MockingDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E713292EC5B32B00DEF4D4 /* Debug */,
+				43E7132A2EC5B32B00DEF4D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
